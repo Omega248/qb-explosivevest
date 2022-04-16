@@ -1,9 +1,12 @@
 **Suicide vests with huge blast radius and a deadman switch made for the QBCore framework**
 
+
+
 **Requirements**
 qb-core
 qb-smallresources/consumables
 interact-sounds
+
 
 
 G activates the vest
@@ -78,6 +81,7 @@ end)
 
 
 **Add to qb-core/shared/items**
+
 
 ['suicidevest'] 		 		 = {['name'] = 'suicidevest', 					['label'] = 'Suicide Vest', 			['weight'] = 5000, 	    ['type'] = 'item', 		['image'] = 'vest.png', 				['unique'] = true, 		['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'Mashallah Brotha'}
 
