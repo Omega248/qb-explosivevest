@@ -1,23 +1,28 @@
-**Suicide vests with huge blast radius and a deadman switch made for the QBCore framework**
+<h1>Suicide vests with huge blast radius and a deadman switch made for the QBCore framework</h1>
 
 
 
-**Requirements**
+<h3>Requirements</h3>
 qb-core
+
 qb-smallresources/consumables
+
 interact-sounds
 
 
+<h3>Keys to activate the vest</h3>
 
-G activates the vest
-= toggles the deadmanswitch
+G  activates the vest
+
+=  toggles the deadmanswitch
 
 
 
 
 
-**add to qb-smallresources around line 500**
+<h3>add to qb-smallresources around line 500</h3>
 
+```
 RegisterNetEvent('consumables:client:RemoveVest', function()
     local ped = PlayerPedId()
     if Vest == true then
@@ -40,7 +45,9 @@ RegisterNetEvent('consumables:client:RemoveVest', function()
         QBCore.Functions.Notify("You're not wearing a vest", "error")
     end
 end)
-
+```
+	
+```	
 RegisterNetEvent('consumables:client:UseSuicideVest', function()
     if Vest == true then QBCore.Functions.Notify('You already have a suicide vest on', 'error') return end
     local ped = PlayerPedId()
@@ -70,11 +77,12 @@ RegisterNetEvent('consumables:client:UseSuicideVest', function()
         QBCore.Functions.Notify("You Have Equiped A Suicide Vest","success")
     end)
 end)
-
+```
+```
 RegisterNetEvent('consumables:client:detonated', function()
     Vest = false
 end)
-
+```
 
 
 
@@ -82,22 +90,22 @@ end)
 
 **Add to qb-core/shared/items**
 
-
+```
 ['suicidevest'] 		 		 = {['name'] = 'suicidevest', 					['label'] = 'Suicide Vest', 			['weight'] = 5000, 	    ['type'] = 'item', 		['image'] = 'vest.png', 				['unique'] = true, 		['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'Mashallah Brotha'}
+```
+
+
+
+
+<h3>Add the vest.png to inventory photos</h3>
 
 
 
 
 
-Add the vest.png to inventory photos
+<h3>Add the sounds to interact-sounds/client/Html</h3>
 
 
-
-
-
-Add the sounds to interact-sounds/client/Html
-
-
-**Preview**
+<h2>Preview</h2>
 
 [![Preview](https://img.youtube.com/vi/oUVp9tHu0Jw/0.jpg)](https://www.youtube.com/watch?v=oUVp9tHu0Jw)
