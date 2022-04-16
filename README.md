@@ -1,5 +1,7 @@
 <h1>Suicide vests with huge blast radius and a deadman switch made for the QBCore framework</h1>
-
+<p>there alot of checks within the script to ensure that the vests can not be exploited/abused.<br>
+all the sounds of the vest are played within distance of the player so anyone nearby will be able <br> 
+to hear the vest beeping and activating</p>
 
 
 <h3>Requirements</h3>
