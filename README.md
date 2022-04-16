@@ -93,7 +93,7 @@ end)
 **Add to qb-core/shared/items**
 
 ```
-['suicidevest'] 		 		 = {['name'] = 'suicidevest', 					['label'] = 'Suicide Vest', 			['weight'] = 5000, 	    ['type'] = 'item', 		['image'] = 'vest.png', 				['unique'] = true, 		['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'Mashallah Brotha'}
+['suicidevest'] 		 		 = {['name'] = 'suicidevest', 					['label'] = 'Suicide Vest', 			['weight'] = 5000, 	    ['type'] = 'item', 		['image'] = 'vest.png', 				['unique'] = true, 		['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'Definitely just a normal vest'}
 ```
 
 
