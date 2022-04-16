@@ -1,6 +1,6 @@
-Suicide vests with huge blast radius and a deadman switch made for the QBCore framework
+**Suicide vests with huge blast radius and a deadman switch made for the QBCore framework**
 
-Requirements
+**Requirements**
 qb-core
 qb-smallresources/consumables
 interact-sounds
@@ -10,7 +10,10 @@ G activates the vest
 = toggles the deadmanswitch
 
 
-add to qb-smallresources around line 500
+
+
+
+**add to qb-smallresources around line 500**
 
 RegisterNetEvent('consumables:client:RemoveVest', function()
     local ped = PlayerPedId()
@@ -69,10 +72,24 @@ RegisterNetEvent('consumables:client:detonated', function()
     Vest = false
 end)
 
-Add to qb-core/shared/items
+
+
+
+
+
+**Add to qb-core/shared/items**
+
 ['suicidevest'] 		 		 = {['name'] = 'suicidevest', 					['label'] = 'Suicide Vest', 			['weight'] = 5000, 	    ['type'] = 'item', 		['image'] = 'vest.png', 				['unique'] = true, 		['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'Mashallah Brotha'}
 
+
+
+
+
 Add the vest.png to inventory photos
+
+
+
+
 
 Add the sounds to interact-sounds/client/Html
 
