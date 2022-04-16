@@ -22,7 +22,7 @@ G  activates the vest
 
 
 
-<h3>add to qb-smallresources around line 500</h3>
+<h3>add to qb-ssmallresources/consumables around line 500</h3>
 
 ```
 RegisterNetEvent('consumables:client:RemoveVest', function()
