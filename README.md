@@ -1,4 +1,4 @@
-<h1>Suicide vests with huge blast radius and a deadman switch made for the QBCore framework</h1>
+<h1>Explosive vests with huge blast radius and a deadman switch made for the QBCore framework</h1>
 <p>there alot of checks within the script to ensure that the vests can not be exploited/abused.<br>
 all the sounds of the vest are played within distance of the player so anyone nearby will be able <br> 
 to hear the vest beeping and activating</p>
@@ -30,18 +30,18 @@ RegisterNetEvent('consumables:client:RemoveVest', function()
     if Vest == true then
         loadAnimDict("clothingtie")
         TaskPlayAnim(ped, 'clothingtie', 'try_tie_negative_a' , 3.0, 3.0, -1, 0, 32, false, false, false)
-        QBCore.Functions.Progressbar("remove_armor", "Removing the suicide vest", 8500, false, true, {
+        QBCore.Functions.Progressbar("remove_armor", "Removing the explosive vest", 8500, false, true, {
             disableMovement = true,
             disableCarMovement = false,
             disableMouse = false,
             disableCombat = true,
         }, {}, {}, {}, function() -- Done
             SetPedComponentVariation(ped, 9, 0, 0, 2)
-            TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["suicidevest"], "add")
-            TriggerServerEvent("QBCore:Server:AddItem", "suicidevest", 1)
-            TriggerEvent('qb-suicidevest:client:remove')
+            TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["explosivevest"], "add")
+            TriggerServerEvent("QBCore:Server:AddItem", "explosivevest", 1)
+            TriggerEvent('qb-explosivevest:client:remove')
             TriggerEvent('consumables:client:detonated')
-            QBCore.Functions.Notify("You Have Removed You're Suicide Vest","success")
+            QBCore.Functions.Notify("You Have Removed You're explosive Vest","success")
         end)
     else
         QBCore.Functions.Notify("You're not wearing a vest", "error")
@@ -50,13 +50,13 @@ end)
 ```
 	
 ```	
-RegisterNetEvent('consumables:client:UseSuicideVest', function()
-    if Vest == true then QBCore.Functions.Notify('You already have a suicide vest on', 'error') return end
+RegisterNetEvent('consumables:client:UseExplosiveVest', function()
+    if Vest == true then QBCore.Functions.Notify('You already have an explosive vest on', 'error') return end
     local ped = PlayerPedId()
     local PlayerData = QBCore.Functions.GetPlayerData()
     loadAnimDict("clothingtie")
     TaskPlayAnim(ped, 'clothingtie', 'try_tie_negative_a' , 3.0, 3.0, -1, 0, 32, false, false, false)
-    QBCore.Functions.Progressbar("use_heavyarmor", "Putting on a suicide vest", 8500, false, true, {
+    QBCore.Functions.Progressbar("use_heavyarmor", "Putting on an explosive vest", 8500, false, true, {
         disableMovement = true,
         disableCarMovement = false,
 		disableMouse = false,
@@ -71,12 +71,12 @@ RegisterNetEvent('consumables:client:UseSuicideVest', function()
             currentVestTexture = GetPedTextureVariation(ped, 30)
             SetPedComponentVariation(ped, 9, 16, 0, 1)
         end
-        TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["suicidevest"], "remove")
-        TriggerServerEvent("QBCore:Server:RemoveItem", "suicidevest", 1)
-        TriggerEvent('qb-suicidevest:client:equip')
+        TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["explosivevest"], "remove")
+        TriggerServerEvent("QBCore:Server:RemoveItem", "explosivevest", 1)
+        TriggerEvent('qb-explosivevest:client:equip')
         TriggerServerEvent('InteractSound_SV:PlayWithinDistance', 3, "beep-sound-1", 0.50)
         Vest = true
-        QBCore.Functions.Notify("You Have Equiped A Suicide Vest","success")
+        QBCore.Functions.Notify("You Have Equiped An Explosive Vest","success")
     end)
 end)
 ```
@@ -93,7 +93,7 @@ end)
 **Add to qb-core/shared/items**
 
 ```
-['suicidevest'] 		 		 = {['name'] = 'suicidevest', 					['label'] = 'Suicide Vest', 			['weight'] = 5000, 	    ['type'] = 'item', 		['image'] = 'vest.png', 				['unique'] = true, 		['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'Definitely just a normal vest'}
+['explosivevest'] 		 		 = {['name'] = 'explosivevest', 					['label'] = 'Explosive Vest', 			['weight'] = 5000, 	    ['type'] = 'item', 		['image'] = 'vest.png', 				['unique'] = true, 		['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'Definitely just a normal vest'}
 ```
 
 
