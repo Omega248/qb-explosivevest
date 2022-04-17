@@ -19,15 +19,15 @@ CreateThread(function()
 	end
 end)
 
-RegisterNetEvent('qb-suicidevest:client:equip', function()
+RegisterNetEvent('qb-explosivevest:client:equip', function()
 		vest = true
 end)
 
-RegisterNetEvent('qb-suicidevest:client:remove', function()
+RegisterNetEvent('qb-explosivevest:client:remove', function()
 		vest = false
 end)
 
-RegisterNetEvent('qb-suicidevest:client:detonate', function()
+RegisterNetEvent('qb-explosivevest:client:detonate', function()
 	if vest == true then
 		deadman = false
 		Wait(250)
@@ -243,7 +243,7 @@ end)
 Citizen.CreateThread(function()
 	while true do
 	if IsControlPressed(0, 83) and vest == true then -- F7
-		TriggerEvent("qb-suicidevest:client:deadman")
+		TriggerEvent("qb-explosivevest:client:deadman")
 		Wait(3000)
 	end
 	Citizen.Wait(100)
