@@ -22,7 +22,7 @@ G  activates the vest
 
 
 
-<h3>add to qb-ssmallresources/client/consumables around line 500</h3>
+<h3>add to qb-smallresources/client/consumables around line 500</h3>
 
 ```
 RegisterNetEvent('consumables:client:RemoveVest', function()
@@ -87,7 +87,19 @@ end)
 ```
 
 
+<h3>add to qb-smallresources/server/consumables around line 130</h3>
 
+```
+QBCore.Functions.CreateUseableItem("explosivevest", function(source, item)
+    local src = source
+    TriggerClientEvent("consumables:client:UseExplosiveVest", src)
+end)
+
+QBCore.Commands.Add("removevest", "Removes Vest", {}, false, function(source, args)
+    local src = source
+	TriggerClientEvent('consumables:client:RemoveVest', src)
+end)
+```
 
 
 **Add to qb-core/shared/items**
