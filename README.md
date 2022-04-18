@@ -108,8 +108,10 @@ end)
 ['explosivevest'] 		 		 = {['name'] = 'explosivevest', 					['label'] = 'Explosive Vest', 			['weight'] = 5000, 	    ['type'] = 'item', 		['image'] = 'vest.png', 				['unique'] = true, 		['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'Definitely just a normal vest'}
 ```
 
-
-
+**Replace in qb-core/shared/items**
+ ```
+['heavyarmor'] 		 			 = {['name'] = 'heavyarmor', 					['label'] = 'Heavy Armor', 				['weight'] = 5000, 	    ['type'] = 'item', 		['image'] = 'armor.png', 				['unique'] = false, 	['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = {accept = {'weapon_stickybomb'}, reward = 'explosivevest', anim = {['dict'] = 'anim@amb@business@weed@weed_inspecting_high_dry@', ['lib'] = 'weed_inspecting_high_base_inspector', ['text'] = 'Crafting Explosive Vest', ['timeOut'] = 7500,}}, ['description'] = 'Some protection won\'t hurt... right?'},
+```
 
 <h3>Add the vest.png to inventory photos</h3>
 
