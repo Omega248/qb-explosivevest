@@ -128,13 +128,13 @@ Citizen.CreateThread(function()
 		detonating = true
 		deadman = false
 		Wait(500)
-		TriggerEvent("qb-suicidevest:client:detonate")
+		TriggerEvent("qb-explosivevest:client:detonate")
 	end
 	Citizen.Wait(100)
 	end
 end)
 
-RegisterNetEvent('qb-suicidevest:client:deadman', function()
+RegisterNetEvent('qb-explosivevest:client:deadman', function()
 	if vest == true and deadman == true then
 		deadman = false
 		QBCore.Functions.Notify("Deadman switch deactivated", "success")
